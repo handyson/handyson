@@ -3,9 +3,16 @@
         <title>Han</title>
         <link>https://handyson.github.io/</link>
         <description>Han的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 10 May 2022 11:57:34 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 14 May 2022 00:15:15 &#43;0800</lastBuildDate>
             <atom:link href="https://handyson.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Golang Channel通道应用模式</title>
+    <link>https://handyson.github.io/golang-channel-patterns/</link>
+    <pubDate>Sat, 14 May 2022 00:15:15 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://handyson.github.io/golang-channel-patterns/</guid>
+    <description><![CDATA[通道设计 通道允许goroutine通过发送接收信号相互通信，通过发送/接收数据或识别特定通道上的状态变化实现收发信号。不要以通道是队列的想法]]></description>
+</item><item>
     <title>Golang方法集的理解</title>
     <link>https://handyson.github.io/understanding-of-golang-method-set/</link>
     <pubDate>Tue, 10 May 2022 11:57:34 &#43;0800</pubDate>
