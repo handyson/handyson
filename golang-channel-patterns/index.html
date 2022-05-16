@@ -34,7 +34,7 @@
                             "url": "https:\/\/handyson.github.io\/images\/avatar.png",
                             "width":  970 ,
                             "height":  970 
-                        }],"genre": "posts","wordcount":  2683 ,
+                        }],"genre": "posts","wordcount":  2710 ,
         "url": "https:\/\/handyson.github.io\/golang-channel-patterns\/","datePublished": "2022-05-14T00:15:15+08:00","dateModified": "2022-05-14T00:15:15+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Han","logo": {
@@ -129,7 +129,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Golang Channel通道应用模式</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="handyson.github.io" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Han</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-14 00:15:15">2022-05-14 00:15:15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2683 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-14 00:15:15">2022-05-14 00:15:15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2710 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="busuanzi_container_page_pv">
                     <i class="far fa-eye fa-fw"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;次阅读量</span>
                 </span>
@@ -514,8 +514,8 @@
 </span></span><span class="line"><span class="cl">	<span class="c1">// 根据核心数打开对应数量的goroutine
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">c</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="k">go</span> <span class="kd">func</span><span class="p">(</span><span class="nx">child</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="k">for</span> <span class="nx">data</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">ch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">				<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;child %d: get signal: %s\n&#34;</span><span class="p">,</span> <span class="nx">child</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">for</span> <span class="nx">data</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">ch</span> <span class="p">{</span>	<span class="c1">// 只有close(ch)循环才会结束，否说会阻塞在这里
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>				<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;child %d: get signal: %s\n&#34;</span><span class="p">,</span> <span class="nx">child</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">				<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nf">Duration</span><span class="p">(</span><span class="nx">rand</span><span class="p">.</span><span class="nf">Intn</span><span class="p">(</span><span class="mi">300</span><span class="p">))</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">				<span class="nx">wg</span><span class="p">.</span><span class="nf">Done</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">			<span class="p">}</span>

@@ -181,7 +181,7 @@ func pooling() {
 	// 根据核心数打开对应数量的goroutine
 	for i := 0; i < c; i++ {
 		go func(child int) {
-			for data := range ch {
+      for data := range ch {	// 只有close(ch)循环才会结束，否说会阻塞在这里
 				fmt.Printf("child %d: get signal: %s\n", child, data)
 				time.Sleep(time.Duration(rand.Intn(300)) * time.Millisecond)
 				wg.Done()
